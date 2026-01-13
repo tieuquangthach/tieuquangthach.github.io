@@ -14,7 +14,7 @@ const parseJsonResponse = <T>(jsonText: string): T => {
 
 export const generateSpecification = async (matrix: QuizMatrix, selectedClass: string, selectedSubject: string): Promise<QuizSpecification> => {
   // Luôn lấy API_KEY mới nhất từ môi trường (Vercel injection)
-  const apiKey = process.env.API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) throw new Error("API Key chưa được cấu hình. Vui lòng kết nối API ở góc phải màn hình.");
   
   const ai = new GoogleGenAI({ apiKey });
@@ -61,7 +61,7 @@ export const generateSpecification = async (matrix: QuizMatrix, selectedClass: s
 };
 
 export const generateQuizFromSpec = async (specification: QuizSpecification, selectedClass: string, selectedSubject: string): Promise<QuizQuestion[]> => {
-  const apiKey = process.env.API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) throw new Error("API Key chưa được cấu hình. Vui lòng kết nối API ở góc phải màn hình.");
 
   const ai = new GoogleGenAI({ apiKey });
@@ -121,7 +121,7 @@ export const generateQuizFromSpec = async (specification: QuizSpecification, sel
 };
 
 export const generateSimilarQuizFromFile = async (content: { data?: string, mimeType?: string, text?: string }): Promise<QuizQuestion[]> => {
-  const apiKey = process.env.API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) throw new Error("API Key chưa được cấu hình. Vui lòng kết nối API ở góc phải màn hình.");
 
   const ai = new GoogleGenAI({ apiKey });
@@ -182,7 +182,7 @@ export const generateSimilarQuizFromFile = async (content: { data?: string, mime
 };
 
 export const regenerateSingleQuestion = async (oldQuestion: QuizQuestion, selectedClass: string, selectedSubject: string): Promise<QuizQuestion> => {
-  const apiKey = process.env.API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) throw new Error("API Key chưa được cấu hình. Vui lòng kết nối API ở góc phải màn hình.");
 
   const ai = new GoogleGenAI({ apiKey });
