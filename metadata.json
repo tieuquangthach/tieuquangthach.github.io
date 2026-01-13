@@ -1,0 +1,5 @@
+{
+  "name": "HỆ THỐNG DẠY HỌC VÀ KIỂM TRA TẠO BỞI AI",
+  "description": "Một ứng dụng web sử dụng AI để tạo ra các đề kiểm tra tùy chỉnh theo số lượng câu hỏi, độ khó và chủ đề. Giao diện hoàn toàn bằng tiếng Việt.",
+  "requestFramePermissions": []
+}
