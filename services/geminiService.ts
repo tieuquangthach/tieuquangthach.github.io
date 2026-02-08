@@ -1,7 +1,7 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
 
-const API_KEY = process.env.API_KEY;
+const API_KEY = process.env.GEMINI_API_KEY;
 
 // Hàm làm sạch chuỗi JSON (loại bỏ markdown code blocks)
 const cleanJsonString = (str: string) => {
